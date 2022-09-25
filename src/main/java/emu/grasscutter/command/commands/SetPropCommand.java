@@ -86,8 +86,8 @@ public final class SetPropCommand implements CommandHandler {
         this.props.put("battlepass", bplevel);
 
         Prop godmode = new Prop("GodMode", PseudoProp.GOD_MODE);
-        this.props.put("godmode", godmode);
-        this.props.put("god", godmode);
+        this.props.put("godmodeset", godmode);
+        this.props.put("godset", godmode);
 
         Prop nostamina = new Prop("UnlimitedStamina", PseudoProp.UNLIMITED_STAMINA);
         this.props.put("unlimitedstamina", nostamina);
@@ -97,8 +97,8 @@ public final class SetPropCommand implements CommandHandler {
         this.props.put("ns", nostamina);
 
         Prop unlimitedenergy = new Prop("UnlimitedEnergy", PseudoProp.UNLIMITED_ENERGY);
-        this.props.put("unlimitedenergy", unlimitedenergy);
-        this.props.put("ue", unlimitedenergy);
+        this.props.put("unlimitedenergyless", unlimitedenergy);
+        this.props.put("ueless", unlimitedenergy);
 
         Prop setopenstate = new Prop("SetOpenstate", PseudoProp.SET_OPENSTATE);
         this.props.put("setopenstate", setopenstate);
