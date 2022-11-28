@@ -22,7 +22,7 @@ import org.slf4j.Logger;
 
 import javax.annotation.Nullable;
 
-import static emu.grasscutter.config.Configuration.getResourcePath;
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
 import static emu.grasscutter.utils.Language.translate;
 
 @SuppressWarnings({"UnusedReturnValue", "BooleanMethodIsAlwaysInverted"})
@@ -394,5 +394,23 @@ public final class Utils {
      */
     public static <T> T drawRandomListElement(List<T> list) {
         return drawRandomListElement(list, null);
+    }
+
+    /***
+     * Splits a string by a character, into a list
+     * @param input The string to split
+     * @param separator The character to use as the split points
+     * @return A list of all the substrings
+     */
+    public static List<String> nonRegexSplit(String input, int separator) {
+        var output = new ArrayList<String>();
+        int start = 0;
+        for (int next = input.indexOf(separator); next > 0; next = input.indexOf(separator, start)) {
+            output.add(input.substring(start, next));
+            start = next + 1;
+        }
+        if (start < input.length())
+            output.add(input.substring(start));
+        return output;
     }
 }
